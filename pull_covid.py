@@ -31,7 +31,7 @@ def pull_data(url,table):
 def request_pull_data_thai():
     offset=get_offset()
     url='https://opend.data.go.th/get-ckan/datastore_search?resource_id=67d43695-8626-45ad-9094-dabc374925ab'+'&offset='+offset+'&limit=1000'
-    resp=requests.get(url,headers={'api-key':'PgN5e5bAVsDbXSi2BXnfagEdRg8FGxdY'})
+    resp=requests.get(url,headers={'api-key':MY_KEY})
     jsondata=resp.json()
     df=pd.json_normalize(jsondata['result'],record_path=['records'])
 
